@@ -5,6 +5,7 @@
     <meta http-equiv=”Content-Type” content=”text/html; charset=utf-8″>
     <title>BepBep</title>
     <link rel="icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>

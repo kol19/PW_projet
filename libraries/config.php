@@ -8,17 +8,6 @@
  *
  */
 
-define('LEBONLOGIN', 'crepo');
-define('LEBONPASS', 'nutella');
-
-/**
- *
- * @package  Proyecto web
- * @authors  Diana Silva - Maykol Hernandez
- * @license  - License
- * @link     -
- *
- */
 $server = 'mysql';
 $host = 'localhost';
 //$base = 'bepbep_core';
@@ -62,8 +51,8 @@ INSERT INTO PERS (nom, num_serv)
      ('Hebert', 1002),
      ('Ribeiro', 1003),
      ('Savary', 1004);
-	 
-SELECT * FROM `PERS` 
+
+SELECT * FROM `PERS`
 
 site internet visible http://miage2.webglazik.net
 Hote FTP 178.33.106.141
@@ -91,4 +80,3 @@ http://mysql.conclase.net/curso/?cap=007#
 
 */
 ?>
-

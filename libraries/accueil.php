@@ -2,12 +2,15 @@
 
 session_start();
 if($_SESSION['CONNECT']=='OK') {
-    echo "Hello ".$_SESSION['NAME'];
-    ?>
-    <br><a href="validation.php?afaire=deconnexion">Deconnexion</a>
-    <?php
+  if (!empty($_GET['error'])) {
+    if ($_GET['error'] == 1) {
+      echo "Creacion de usuario exitosa!!!<br>";
+    }
+  }
+  echo "Bienvenue ".$_SESSION['NAME'];
+    echo '<br><a href="validation.php?afaire=deconnexion">Deconnexion</a>';
     }
 else {
-    header('Location: login.php');
+    header('Location: http://192.168.1.82/~mako/PW_projet/');
     }
 ?>

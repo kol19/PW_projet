@@ -1,44 +1,36 @@
 <?php
 /**
- *
  * @package  Proyecto web
  * @authors  Diana Silva - Maykol Hernandez
  * @license  - License
  * @link     -
- *
- */ 
+ */
 
-require('config.php');
-require('bepbep_coreClass');
+require_once 'functions.php';
 
+// Verificacion de desconexion de sesion
 if (!empty($_GET['afaire']) && $_GET['afaire']=='deconnexion') {
     session_start();
     unset($_SESSION);
-    /*$datos_cookie = session_get_cookie_params();
+    $datos_cookie = session_get_cookie_params();
     setcookie(session_name(), NULL, time()-999999, $datos_cookie["path"],
           $datos_cookie["domain"], $datos_cookie["secure"],
-          $datos_cookie["httponly"]);*/
+          $datos_cookie["httponly"]);
     session_destroy();
-    //header('Location:login.php?error=3');
-    echo 'Vous avez bien été déconnecté du service';
+    header('Location:http://192.168.1.82/~mako/PW_projet/?error=3');
 }
-elseif(empty($_POST['name']) || empty($_POST['password'])) {
-    //header('Location:index.php?error=1', false);
-    echo 'Veuillez saisir un login et un mot de passe';
+// Verificacion si variables estan vacias
+else if(empty($_POST['user']) || empty($_POST['password'])) {
+    header('Location:http://192.168.1.82/~mako/PW_projet/?error=1', false);
+    //echo 'Veuillez saisir un login et un mot de passe';
 }
-else {
-    $name = $_POST['name'];
-    $password = $_POST['password'];
-    if($name == LEBONLOGIN && $password == LEBONPASS) {
-        //session_start();
-        //$_SESSION['CONNECT']='OK';
-        //$_SESSION['NAME']=$name;
-        //$_SESSION['PASSWORD']=$password;;
-        //header('Location:accueil.php');
-        echo 'usuario y contraseña correctos';
-    } else {
-        echo 'Erreur de login/mot de passe';
-	//header('Location:login.php?error=2');
-    }
+else{
+
+  if(login($_POST['user'], $_POST['password'])) {
+    header('Location:accueil.php');
+  }
+  else {
+    header('Location:http://192.168.1.82/~mako/PW_projet/?error=2');
+  }
 }
 ?>

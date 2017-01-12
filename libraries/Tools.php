@@ -1,9 +1,9 @@
 <?php
-include_once 'functions.php';
+//include_once 'functions.php';
 
 /**
- * Clase que contiene funciones útiles sobre la funcionalidad del programa 
- * 
+ * Clase que contiene funciones útiles sobre la funcionalidad del programa
+ *
  * @package  Proyecto web
  * @authors  Diana Silva - Maykol Hernandez
  * @license  - License
@@ -22,7 +22,7 @@ class Tools{
             echo "Failed to connect to MySQL: " . mysqli_connect_error()."<br>";
         }
         else {
-            echo 'Connexion réussie<br>';
+        //    echo 'Connexion réussie<br>';
         }
         //mysqli_query ($conexion,"SET NAMES 'utf8'");
         //mysqli_set_charset($conexion, "utf8");
@@ -36,26 +36,35 @@ class Tools{
             echo "ERROR: " . $e->getMessage()."</br></br></br>";
         }*/
     }
-    
+
     /**
      * Desconecta la base de datos a partir de la instancia que le pasamos
      * @param type $db
      * @return type
-     */ 
+     */
     function disconnectDB($conexion){
         $close = mysqli_close($conexion);
         if (!$close) {
             die('desconexion impossible : ' . mysql_error())."<br>";
         }
-        echo 'Desconnexion réussie<br>';
+        //echo 'Desconnexion réussie<br>';
         return close;
     }
-    
+
     function consulta() {
         $conn = $this->connectDB();
         $sql = ('SELECT username FROM users');
         $result = $conn->query($sql);
-        
+
+        $this->disconnectDB($conn);
+        return $result;
+    }
+
+    function consultaDB($consulta) {
+        $conn = $this->connectDB();
+        $sql = ($consulta);
+        $result = $conn->query($sql);
+
         $this->disconnectDB($conn);
         return $result;
     }
