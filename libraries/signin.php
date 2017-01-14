@@ -1,54 +1,58 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Sign In</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Bootstrap-->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-</head>
-<body>
+<?php
+/**
+ *
+ * @package  Project PW - Université Rennes 1
+ * @authors  Diana Silva - Maykol Hernandez
+ * @link     - https://bepbep.herokuapp.com/
+ *
+ */
+
+ //Ce fichier contient le formulaire pour créer les utilisateurs
+
+require_once '../mod/header.php';
+require_once '../mod/menu3.php';
+?>
+
   <div class="container">
     <div class="row">
       <div class="col-md-4 col-md-offset-4">
         <div class="panel panel-default">
 			  	<div class="panel-heading">
-			    	<h3 class="panel-title">Create a new account</h3>
+			    	<h3 class="panel-title">Ouvrez un nouveau compte</h3>
           </div>
 			  	<div class="panel-body">
-			    	<form action = "signinvalidation.php" accept-charset="UTF-8" role="form" method="POST">
+			    	<form action="signinvalidation.php" accept-charset="UTF-8" role="form" method="POST" name="formSignIn" onsubmit="return ValidateFormSignIn()">
               <fieldset>
 			    	  	<div class="form-group">
-                  <label for="user">Email address:</label>
-			    		    <input class="form-control" placeholder="This will be your sign in email address." name="user" type="text" id="textValidReg"/>
+                  <label for="user">Adresse email :</label>
+			    		    <input class="form-control" placeholder="Cette addresse mail vous permettra de vous enregistrer" name="user" type="text" id="textValidReg" value="<?php echo $_GET['user'] ?>" required/>
                 </div>
                 <div class="form-group">
-                  <label for="password">Create password:</label>
-                  <input class="form-control" placeholder="8 chiffres" name="password" type="password" value="">
+                  <label for="password">Créez un mot de passe :</label>
+                  <input class="form-control" placeholder="Entre 8 et 10 caracteres (minimum une majuscule, une chiffre et un caracter spécial)" name="password" type="password" value="" required>
                 </div>
                 <div class="form-group">
-                  <label for="password2">Confirm your password:</label>
-			    			  <input class="form-control" placeholder="Enter password again" name="password2" type="password" value="">
+                  <label for="password2">Confirmez votre mot de passe :</label>
+			    			  <input class="form-control" placeholder="Saisissez le mot de passe à nouveau" name="password2" type="password" value="" required>
                 </div>
                 <div class="ratio">
-                  <label for="civilite">Civilit&eacute;:</label>
-                  <input type="radio" name="civilite" valeu="Mme"/>Mme
+                  <label for="civilite">Civilit&eacute; :</label>
+                  <input type="radio" name="civilite" value="Mme"/>Mme
                   <input type="radio" name="civilite" value="Mr"/>Mr<br>
                   </label>
 			    	    </div>
                 <div class="form-group">
-                  <label for="prenom">Pr&eacute;nom:</label>
-                  <input class="form-control" placeholder="Pr&eacute;nom" name="prenom" type="text" value="">
+                  <label for="prenom">Pr&eacute;nom :</label>
+                  <input class="form-control" placeholder="Pr&eacute;nom" name="prenom" type="text" value="<?php echo $_GET['prenom'] ?>" required>
                 </div>
                 <div class="form-group">
-                  <label for="nom">Nom:</label>
-                  <input class="form-control" placeholder="Nom" name="nom" type="text" value="">
+                  <label for="nom">Nom :</label>
+                  <input class="form-control" placeholder="Nom de famille" name="nom" type="text" value="<?php echo $_GET['nom'] ?>" required>
                 </div>
-                <div class="checkbox">
-			    	    	<label>
-                  <input name="remember" type="checkbox" value="Remember Me"> Remember Me
-			    	    	</label>
-			    	    </div>
-                <input class="btn btn-lg btn-success btn-block" type="submit" value="Create your account" onclick="ValidarCadenaExpReg()">
+                <div class="form-group">
+                   <button type="submit" class="btn btn-primary btn-block">Ouvrez votre compte</button>
+                </div>
+
               </fieldset>
             </form>
           </div>
@@ -58,37 +62,58 @@
   </div>
 
   <script>
-    function ValidarCadenaExpReg() {
-        // Expresion regular que representa un Email válido
-        cadena = "^[a-z]+@[a-z]+\.[a-z]{2,4}$";
-        re = new RegExp(cadena);
+  // Ce script verifie les champes du formulaire
+    var formulaire = document.getElementsByName("formSignIn")[0];
+    function ValidateFormSignIn() {
+      var filter=/^.+@.+\..{2,3}$/;
+      if (formulaire.user.value.length == 0 || !formulaire.user.value.match(new RegExp(filter))) {
+       alert("Veuillez entrer une addresse mail valide");
+       return false;
+      }
 
-        if (document.getElementById("textValidReg").value.match(re))
-            alert("Aceptado");
-        else
-            alert("Email incorrecto");
+      filter = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,10}$/;
+      if (formulaire.password.value.length == 0 || !formulaire.password.value.match(new RegExp(filter))) {
+       alert("Votre mot de passe doit comporter entre 8 et 10 caractères, se composer de chiffres et de lettres et comprendre des majuscules/minuscules et des caractères spéciaux.");
+       return false;
+      }
+
+      if (formulaire.password.value != formulaire.password2.value) {
+       alert("Les mots de passes ne coincident pas");
+       return false;
+      }
+
+      filter = /^[A-Za-zƒŠŒŽšœžŸÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèé êëìíîïðñòóôõöøùúûüýþÿ]*$/;
+      if (formulaire.prenom.value.length == 0 || !formulaire.prenom.value.match(new RegExp(filter))) {
+       alert("Veuillez entrer un prénom valide");
+       return false;
+      }
+      if (formulaire.nom.value.length == 0 || !formulaire.nom.value.match(new RegExp(filter))) {
+       alert("Veuillez entrer un nom valide");
+       return false;
+      }
+      return true;
     }
   </script>
 
-  <script>
-    $(document).ready(function(){
-      $('#characterLeft').text('140 characters left');
-      $('#message').keydown(function () {
-        var max = 140;
-        var len = $(this).val().length;
-        if (len >= max) {
-            $('#characterLeft').text('You have reached the limit');
-            $('#characterLeft').addClass('red');
-            $('#btnSubmit').addClass('disabled');
-        }
-        else {
-            var ch = max - len;
-            $('#characterLeft').text(ch + ' characters left');
-            $('#btnSubmit').removeClass('disabled');
-            $('#characterLeft').removeClass('red');
-        }
-    });
-});
-  </script>
+
   <script src="http://code.jquery.com/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+
+  <script>
+<?php
+  if (!empty($_GET['msjctrl'])) {
+      if ($_GET['msjctrl'] == 1) {
+        ?> alert("Veuillez saisir un login et un mot de passe") <?php
+          //echo "Veuillez saisir un login et un mot de passe";
+      } if ($_GET['msjctrl'] == 2) {
+        ?> alert("Veuillez saisir un autre nom d'utilisateur") <?php
+          //echo "Veuillez saisir un autre nom d'utilisateur";
+  }
+}
+//<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2663.7450811361587!2d-1.6405683492009628!3d48.11515306060016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480edee4490f4333%3A0x3c4238e97734ee99!2sISTIC!5e0!3m2!1sfr!2sfr!4v1484347336830" width="300" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+?>
+</script>
+<?php
+require_once '../mod/footer.php';
+?>

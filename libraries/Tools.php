@@ -1,32 +1,38 @@
 <?php
-//include_once 'functions.php';
+
 
 /**
- * Clase que contiene funciones útiles sobre la funcionalidad del programa
- *
- * @package  Proyecto web
- * @authors  Diana Silva - Maykol Hernandez
- * @license  - License
- * @link     -
- *
- */
+  * Cette classe contient les fonctions pour la fontionnalité du site web
+  *
+  * @package  Projet PW - Université Rennes 1
+  * @authors  Diana Silva - Maykol Hernandez
+  * @link     - https://bepbep.herokuapp.com/
+  *
+  */
+
+  //Cette class est utilisée pour gérer les connexions à la base de données
+
 class Tools{
-    /**
-     * Devuelve una instancia de la conexión a la base de datos
-     * @return type
-     */
-    function connectDB(){
-        $conexion = mysqli_connect("localhost", "root", "root", "bepbep_core");
+
+
+     function connectDB(){
+      include('config.php');
+      $conexion = mysqli_connect($host, $user, $passwd, $base);
+      //$conexion = mysqli_connect("mysql.istic.univ-rennes1.fr", "user_17010715", "testtest", "base_17010715");
+        //$conexion = mysqli_connect("localhost", "root", "root", "bepbep_core");
         //$conexion = mysqli_connect($host, $user, $passwd, $base);
         if (mysqli_connect_errno()) {
-            echo "Failed to connect to MySQL: " . mysqli_connect_error()."<br>";
+          ?><script> alert("Failed to connect to MySQL: <?php echo mysqli_connect_error() ?>");</script> <?php
+            //echo "Failed to connect to MySQL: " . mysqli_connect_error()."<br>";
+            return false;
         }
         else {
-        //    echo 'Connexion réussie<br>';
+            //echo 'Connexion réussie<br>';
+            return $conexion;
         }
         //mysqli_query ($conexion,"SET NAMES 'utf8'");
         //mysqli_set_charset($conexion, "utf8");
-        return $conexion;
+        //return $conexion;
         /*try {
             $db = new PDO("$server:host=$host;dbname=$base", $user, $passwd);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -37,11 +43,7 @@ class Tools{
         }*/
     }
 
-    /**
-     * Desconecta la base de datos a partir de la instancia que le pasamos
-     * @param type $db
-     * @return type
-     */
+    //Fonction de desconnexion de la base de données
     function disconnectDB($conexion){
         $close = mysqli_close($conexion);
         if (!$close) {
@@ -51,6 +53,7 @@ class Tools{
         return close;
     }
 
+    //Fonction pour tester les requetes à la base de données
     function consulta() {
         $conn = $this->connectDB();
         $sql = ('SELECT username FROM users');
@@ -59,7 +62,7 @@ class Tools{
         $this->disconnectDB($conn);
         return $result;
     }
-
+    //Fonction pour faire les requetes à la base de données
     function consultaDB($consulta) {
         $conn = $this->connectDB();
         $sql = ($consulta);

@@ -1,14 +1,15 @@
 <?php
 /**
- * @package  Proyecto web
+ *
+ * @package  Projet PW - Université Rennes 1
  * @authors  Diana Silva - Maykol Hernandez
- * @license  - License
- * @link     -
+ * @link     - https://bepbep.herokuapp.com/
+ *
  */
 
 require_once 'functions.php';
 
-// Verificacion de desconexion de sesion
+// Verificacion de desconexion de session
 if (!empty($_GET['afaire']) && $_GET['afaire']=='deconnexion') {
     session_start();
     unset($_SESSION);
@@ -17,20 +18,23 @@ if (!empty($_GET['afaire']) && $_GET['afaire']=='deconnexion') {
           $datos_cookie["domain"], $datos_cookie["secure"],
           $datos_cookie["httponly"]);
     session_destroy();
-    header('Location:http://192.168.1.82/~mako/PW_projet/?error=3');
+    //header('Location:http://192.168.1.82/~mako/PW_projet/?error=3');
+    header('Location: ../?msjctrl=3');
 }
 // Verificacion si variables estan vacias
 else if(empty($_POST['user']) || empty($_POST['password'])) {
-    header('Location:http://192.168.1.82/~mako/PW_projet/?error=1', false);
+    //header('Location:http://192.168.1.82/~mako/PW_projet/?error=1', false);
+    header('Location: ../?msjctrl=1');
     //echo 'Veuillez saisir un login et un mot de passe';
 }
 else{
 
   if(login($_POST['user'], $_POST['password'])) {
-    header('Location:accueil.php');
+    header('Location:home.php');
   }
   else {
-    header('Location:http://192.168.1.82/~mako/PW_projet/?error=2');
+    //header('Location:http://192.168.1.82/~mako/PW_projet/?error=2');
+    header('Location: ../?msjctrl=2');
   }
 }
 ?>
