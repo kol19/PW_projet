@@ -22,7 +22,8 @@ class Tools{
         //$conexion = mysqli_connect("localhost", "root", "root", "bepbep_core");
         //$conexion = mysqli_connect($host, $user, $passwd, $base);
         if (mysqli_connect_errno()) {
-          ?><script> alert("Failed to connect to MySQL: <?php echo mysqli_connect_error() ?>");</script> <?php
+          ?><script> alert("Failed to connect to MySQL: <?php echo mysqli_connect_error() ?>");</script><?php
+          //header('Location: ../');
             //echo "Failed to connect to MySQL: " . mysqli_connect_error()."<br>";
             return false;
         }

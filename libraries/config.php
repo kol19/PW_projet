@@ -17,7 +17,6 @@ $user = 'root';
 $passwd = 'root';
 */
 
-
 $server = 'mysql';
 $host = 'mysql.istic.univ-rennes1.fr';
 $base = 'base_17010715';
