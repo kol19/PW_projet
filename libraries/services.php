@@ -18,9 +18,9 @@ require_once '../mod/menu3.php';
 <h2> Tarifs</h2>
 <div class="Tableau">
    <p class="legende">
-      <span class="col1">RESTAURARION</span>
+      <span class="col1">RESTAURATION</span>
       <span class="col2">PERSONNEL</span>
-      <span class="col3">CURSES</span>
+      <span class="col3">COURSES</span>
     <br><br>
       <span class="col1">8&#8364; pH </span>
       <span class="col2">10&#8364; pH </span>

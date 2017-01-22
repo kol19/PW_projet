@@ -13,7 +13,7 @@ require_once '../mod/header.php';
 require_once '../mod/menu3.php';
 ?>
 
-
+<br><br><br>
 <form name="contactform" method="post" action="send_form_email.php">
 <table width="450px"><!---Este tamaño en px es personalizable -->
 <tr>

@@ -28,6 +28,7 @@ else {
   require_once '../mod/header.php';
   require_once '../mod/menu2.php';
   ?>
+  <br><br><br>
   <div class="container">
     <div class="row">
       <div class="col-md-4 col-md-offset-4">

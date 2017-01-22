@@ -21,7 +21,7 @@ if($_SESSION['CONNECT']!='OK') {
 
 $commandes=getCommandes($_SESSION['ID']);
 
-echo '<CENTER><TABLE width=70% border=1>
+echo '<br><br><br><CENTER><TABLE width=70% border=1>
 <TR><th colspan=6 bgcolor="#cccccc">VOS COMMANDES</th></TR>
 <tr>
  <th width=15% bgcolor="#cccccc"> DATE DE LA COMMANDE </th>
@@ -40,7 +40,7 @@ while($rows=mysqli_fetch_array($commandes)){
   echo '<td bgcolor="#cccccc">'.$rows[0]."</td>";
   echo '<td bgcolor="#cccccc">'.$rows[4]."<tr></td>";
 }
-echo '</table></CENTER>';
+echo '</table></CENTER><br><br><br>';
 
 
 
