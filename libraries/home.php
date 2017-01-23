@@ -37,11 +37,11 @@ else {
 			    	<h3 class="panel-title">Faites votre commande:</h3>
           </div>
 			  	<div class="panel-body">
-			    	<form action="requestvalidation.php" accept-charset="UTF-8" role="form" method="POST" name="formRequest" >
+			    	<form action="requestvalidation.php" accept-charset="UTF-8" role="form" method="POST" name="formRequest" onsubmit="return ValidateZip()">
               <fieldset>
                 <div class="form-group">
                   <textarea class="form-control" rows="4" cols="50" placeholder="D&eacute;crivez le service souhaité en utilisant 200 caract&#232;res..." name="description" onKeyDown="valida_longitud()" onKeyUp="valida_longitud()" required></textarea>
-                  <input type="text" name=caracteres size=2/>
+                  <input type="text" name=caracteres size=3/>
                 </div>
 
                 <div class="form-group">
@@ -146,10 +146,19 @@ else {
         //echo "Veuillez saisir un login et un mot de passe";
     }
   }
-
   //<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2663.7450811361587!2d-1.6405683492009628!3d48.11515306060016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480edee4490f4333%3A0x3c4238e97734ee99!2sISTIC!5e0!3m2!1sfr!2sfr!4v1484347336830" width="300" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
-
   ?>
+</script>
+
+<script>
+var formulaire = document.getElementsByName("formRequest")[0];
+function ValidateZip() {
+  var filter=^([1-9]{2}|[0-9][1-9]|[1-9][0-9])[0-9]{3}$;
+  if (formulaire.zipcode.value.length == 0 || !formulaire.zipcode.value.match(new RegExp(filter))) {
+   alert("Veuillez entrer un code postale valide");
+   return false;
+  }
+}
 </script>
 <?php
 require_once '../mod/footer.php';

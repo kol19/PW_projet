@@ -8,16 +8,15 @@
  *
  */
 ?>
-
- <!DOCTYPE html PUBLIC “-//W3C//DTD HTML 4.01//EN”
- “http://www.w3.org/TR/html4/strict.dtd”>
- <html lang=”en”>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
  <head>
-     <meta http-equiv=”Content-Type” content=”text/html; charset=utf-8″>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-     <link href="css/3.css" rel="stylesheet" media="screen">
-     <link href="css/cssID.css" rel="stylesheet" media="screen">
+     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+     <meta name="keywords" content="livraison, service, aide, achat, chien, jouer, bepbep, miage"/>
+     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+     <link href="css/3.css" rel="stylesheet" media="screen"/>
+     <link href="css/cssID.css" rel="stylesheet" media="screen"/>
      <title>BepBep</title>
      <link rel="icon" href="images/favicon.ico" />
  </head>
@@ -30,14 +29,13 @@ require_once 'mod/menu.php';
 
 <h2>&nbsp;</h2>
 
-<div align="center">
-	<img class="mySlides" id="imageSlide" style="width:55%" src="http://kitbyklo.com/wp-content/uploads/2016/01/Bien-travailler-chez-soi-2.jpg">
-	<img class="mySlides" id="imageSlide" style="width:55%" src="http://cdn.mos.bikeradar.imdserve.com/images/bikes-and-gear/accessories/1244455151377-gpjrai2miuwc-1200-80.jpg">
-	<img class="mySlides" id="imageSlide" style="width:55%" src="http://cdn.ndtv.com/tech/images/gadgets/controller_video_gaming_pixabay.jpg?output-quality=80&output-format=jpg">
-  <img class="mySlides" id="imageSlide" style="width:55%" src="http://www.sbs.com.au/news/sites/sbs.com.au.news/files/images/j/b/JBOB_dogwalk_800x600.jpg">
-	<img class="mySlides" id="imageSlide" style="width:55%" src="https://comptoirdesproducteurs-asper.netdna-ssl.com/1036-lightbox/panier-pour-2-pers.jpg">
-  <img class="mySlides" id="imageSlide" style="width:55%" src="http://busseralbert.fr/wp-content/uploads/2014/11/boulangerie-1.jpg">
-</div>
+	<img class="mySlides" alt="Slide" style="width:55%" src="http://kitbyklo.com/wp-content/uploads/2016/01/Bien-travailler-chez-soi-2.jpg"/>
+	<img class="mySlides" alt="Slide" style="width:55%" src="http://cdn.mos.bikeradar.imdserve.com/images/bikes-and-gear/accessories/1244455151377-gpjrai2miuwc-1200-80.jpg"/>
+	<img class="mySlides" alt="Slide" style="width:55%" src="http://cdn.ndtv.com/tech/images/gadgets/controller_video_gaming_pixabay.jpg?output-quality=80&output-format=jpg"/>
+  <img class="mySlides" alt="Slide" style="width:55%" src="http://www.sbs.com.au/news/sites/sbs.com.au.news/files/images/j/b/JBOB_dogwalk_800x600.jpg"/>
+	<img class="mySlides" alt="Slide" style="width:55%" src="https://comptoirdesproducteurs-asper.netdna-ssl.com/1036-lightbox/panier-pour-2-pers.jpg"/>
+  <img class="mySlides" alt="Slide" style="width:55%" src="http://busseralbert.fr/wp-content/uploads/2014/11/boulangerie-1.jpg"/>
+
 
 
 <script>
@@ -79,33 +77,24 @@ function carousel() {
 	</p>
 </div>
 
-
-
-<CENTER>
-<div id=”footer”>
 <footer>
- <h5>Auteurs: Diana Silva, Maykol Hernandez</h5>
- <h5>While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy. Copyright 2016 by BepBep Data. All Rights Reserved.</h5>
- <h5>Contact information: <a href="mailto:kol_19@yahoo.com">@bepbep_support</a>.</h5>
- <h5>Publié le 8 janvier 2017</h5>
+   <h5 class="footer">Auteurs: Diana Silva, Maykol Hernandez</h5>
+   <h5 class="footer">While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy. Copyright 2016 by BepBep Data. All Rights Reserved.</h5>
+   <h5 class="footer">Contact information: <a href="mailto:kol_19@yahoo.com">@bepbep_support</a>.</h5>
+   <h5 class="footer">Publié le 8 janvier 2017</h5>
 </footer>
-</div>
-</CENTER>
+
+  <a href="https://www.instagram.com/" onMouseOver="lightUp3();" onMouseOut="dimDown3();">
+  <img src="images/InstagramOff.png" alt="Social Network" class="socialnetwork" id="image3"/></a>
+
+	<a href="https://www.twitter.com/" onMouseOver="lightUp2();" onMouseOut="dimDown2();">
+	<img src="images/twitterOff.png" alt="Social Network" class="socialnetwork" id="image2"/></a>
+
+  <a href="https://www.facebook.com/" onMouseOver="lightUp();" onMouseOut="dimDown();">
+	<img src="images/facebookOff.png" alt="Social Network" class="socialnetwork" id="image1"/></a>
 
 
-
-<div align="right">
-	<A HREF="https://www.facebook.com/" onMouseOver="lightUp();" onMouseOut="dimDown();">
-	<IMG SRC="images/facebookOff.png" name="image1" id="image1"/></A>
-
-	<A HREF="https://www.twitter.com/" onMouseOver="lightUp2();" onMouseOut="dimDown2();">
-	<IMG SRC="images/TwitterOff.png" name="image2" id="image2"/></A>
-
-	<A HREF="https://www.instagram.com/" onMouseOver="lightUp3();" onMouseOut="dimDown3();">
-	<IMG SRC="images/InstagramOff.png" name="image3" id="image3"/></A>
-</div>
-
-<script TYPE="text/Javascript">
+<script type="text/javascript">
 	function lightUp() {
 	document.getElementById('image1').src="images/facebookIn.png";
 	};

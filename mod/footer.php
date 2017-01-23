@@ -1,4 +1,4 @@
-<CENTER>
+<center>
 <div id=”footer”>
 <footer>
  <h5>Auteurs: Diana Silva, Maykol Hernandez</h5>
@@ -7,20 +7,20 @@
  <h5>Publié le 8 janvier 2017</h5>
 </footer>
 </div>
-</CENTER>
+</center>
 
 <div align="right">
-	<A HREF="https://www.facebook.com/" onMouseOver="lightUp();" onMouseOut="dimDown();">
-	<IMG SRC="../images/facebookOff.png" name="image1" id="image1"/></A>
+	<a HREF="https://www.facebook.com/" onMouseOver="lightUp();" onMouseOut="dimDown();">
+	<img SRC="../images/facebookOff.png" alt="Social Network" name="image1" id="image1"/></a>
 
-	<A HREF="https://www.twitter.com/" onMouseOver="lightUp2();" onMouseOut="dimDown2();">
-	<IMG SRC="../images/TwitterOff.png" name="image2" id="image2"/></A>
+	<a HREF="https://www.twitter.com/" onMouseOver="lightUp2();" onMouseOut="dimDown2();">
+	<img SRC="../images/twitterOff.png" alt="Social Network" name="image2" id="image2"/></a>
 
-	<A HREF="https://www.instagram.com/" onMouseOver="lightUp3();" onMouseOut="dimDown3();">
-	<IMG SRC="../images/InstagramOff.png" name="image3" id="image3"/></A>
+	<a HREF="https://www.instagram.com/" onMouseOver="lightUp3();" onMouseOut="dimDown3();">
+	<img SRC="../images/InstagramOff.png" alt="Social Network" name="image3" id="image3"/></a>
 </div>
 
-<script TYPE="text/Javascript">
+<script type="text/Javascript">
 	function lightUp() {
 	document.getElementById('image1').src="../images/facebookIn.png";
 	};

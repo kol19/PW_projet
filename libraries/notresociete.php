@@ -14,7 +14,7 @@ require_once '../mod/menu3.php';
 ?>
 <br><br><br>
 <div align="center">
-  <img class="mySlides" id="imageSlide" style="width:45%" src="http://www.retenesega.com/images/blog2.jpg">
+  <img class="mySlides" id="imageSlide" alt="Notre Societé" style="width:45%" src="http://www.retenesega.com/images/blog2.jpg">
 </div>
 
 <h3 id="haut">BEPBEP:</h3>

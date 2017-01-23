@@ -16,6 +16,23 @@ width: 95%;
 }
 
 #image1, #image2, #image3 {
-  width: 40;
-  height: 40;
+  width: 40px;
+  height: 40px;
+}
+
+.footer {
+  text-align:center;
+}
+
+.socialnetwork {
+  width: 40px;
+  height: 40px;
+  position:relative;
+  float:right;
+}
+
+.mySlides {
+  display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
