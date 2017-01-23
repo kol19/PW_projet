@@ -71,7 +71,7 @@ function carousel() {
      <br><br>
     Processus
     <br>
-    Devenez membre ou connectez vous sur www.bepbep.com, saisissez les
+    Devenez membre ou connectez vous sur <a href="http://bepbep.herokuapp.com">http://bepbep.herokuapp.com</a>, saisissez les
 		informations li&#233;es &#224; votre commande ainsi que l'heure, l'adresse,le budget, etc.
     Finalement un particulier est inform&#233; et vient vous aider.
 	</p>
