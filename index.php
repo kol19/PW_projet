@@ -88,7 +88,7 @@ function carousel() {
   <img src="images/InstagramOff.png" alt="Social Network" class="socialnetwork" id="image3"/></a>
 
 	<a href="https://www.twitter.com/" onMouseOver="lightUp2();" onMouseOut="dimDown2();">
-	<img src="images/twitterOff.png" alt="Social Network" class="socialnetwork" id="image2"/></a>
+	<img src="images/TwitterOff.png" alt="Social Network" class="socialnetwork" id="image2"/></a>
 
   <a href="https://www.facebook.com/" onMouseOver="lightUp();" onMouseOut="dimDown();">
 	<img src="images/facebookOff.png" alt="Social Network" class="socialnetwork" id="image1"/></a>
@@ -103,10 +103,10 @@ function carousel() {
 	};
 
 	function lightUp2() {
-	document.getElementById('image2').src="images/twitterIn.png";
+	document.getElementById('image2').src="images/TwitterIn.png";
 	};
 	function dimDown2() {
-	document.getElementById('image2').src="images/twitterOff.png";
+	document.getElementById('image2').src="images/TwitterOff.png";
 	};
 
 	function lightUp3() {

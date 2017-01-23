@@ -14,7 +14,7 @@
 	<img SRC="../images/facebookOff.png" alt="Social Network" name="image1" id="image1"/></a>
 
 	<a HREF="https://www.twitter.com/" onMouseOver="lightUp2();" onMouseOut="dimDown2();">
-	<img SRC="../images/twitterOff.png" alt="Social Network" name="image2" id="image2"/></a>
+	<img SRC="../images/TwitterOff.png" alt="Social Network" name="image2" id="image2"/></a>
 
 	<a HREF="https://www.instagram.com/" onMouseOver="lightUp3();" onMouseOut="dimDown3();">
 	<img SRC="../images/InstagramOff.png" alt="Social Network" name="image3" id="image3"/></a>
@@ -29,10 +29,10 @@
 	};
 
 	function lightUp2() {
-	document.getElementById('image2').src="../images/twitterIn.png";
+	document.getElementById('image2').src="../images/TwitterIn.png";
 	};
 	function dimDown2() {
-	document.getElementById('image2').src="../images/twitterOff.png";
+	document.getElementById('image2').src="../images/TwitterOff.png";
 	};
 
 	function lightUp3() {

@@ -153,7 +153,7 @@ else {
 <script>
 var formulaire = document.getElementsByName("formRequest")[0];
 function ValidateZip() {
-  var filter=^([1-9]{2}|[0-9][1-9]|[1-9][0-9])[0-9]{3}$;
+  var filter='^([1-9]{2}|[0-9][1-9]|[1-9][0-9])[0-9]{3}$';
   if (formulaire.zipcode.value.length == 0 || !formulaire.zipcode.value.match(new RegExp(filter))) {
    alert("Veuillez entrer un code postale valide");
    return false;
