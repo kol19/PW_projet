@@ -23,6 +23,15 @@ require_once '../mod/menu3.php';
 	<li>Nous sommes une équipe jeune et dynamique. </li>
 </div>
 
+<div>
+  <p>
+    <video width=40% controls>
+    <source src="../images/video1.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+    </video>
+  </p>
+</div>
+
 <div id="contenu">
 	<p>
   <h4 id="haut">LES FONDATEURS:</h4>
